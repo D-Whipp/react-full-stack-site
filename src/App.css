@@ -1,11 +1,12 @@
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdans, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 18px;
 }
 
 button {
   padding: 16px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdans, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 16px;
   background-color: black;
   color: white;
@@ -13,8 +14,7 @@ button {
   cursor: pointer;
 }
 
-h3,
-h4 {
+h3, h4 {
   margin-bottom: 0;
 }
 
@@ -24,7 +24,7 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
+  background: white;
 }
 
 nav ul {
@@ -35,26 +35,26 @@ nav ul {
 
 nav li {
   display: inline-block;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 nav a {
   text-decoration: none;
   color: black;
   font-weight: bold;
-  padding: 16px 32px;
+  padding: 24px 32px;
 }
 
 nav a:hover {
-  background-color: black;
+  background: black;
   color: white;
 }
 
 #page-body {
   max-width: 700px;
   margin: auto;
-  padding-top: 64px;
+  padding-top: 72px;
 }
 
 .article-list-item {
@@ -77,8 +77,7 @@ nav a:hover {
   margin-bottom: 16px;
 }
 
-#add-comment-form input,
-textarea {
+input, textarea {
   display: block;
   width: 300px;
   padding: 8px;
@@ -89,12 +88,17 @@ textarea {
   margin-bottom: 16px;
 }
 
+.error {
+  padding: 8px;
+  border-radius: 4px;
+  background-color: pink;
+}
+
 #add-comment-form button {
   width: 320px;
 }
 
-#upvotes-section button,
-p {
+#upvotes-section button, p {
   display: inline-block;
   margin-right: 16px;
 }
@@ -102,4 +106,10 @@ p {
 .comment {
   border-bottom: 2px solid black;
   padding: 16px;
+}
+
+.nav-right {
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
