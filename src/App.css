@@ -18,6 +18,10 @@ h3, h4 {
   margin-bottom: 0;
 }
 
+.underline-sub-heading {
+  text-decoration: underline;
+}
+
 nav {
   border-bottom: 4px solid black;
   text-align: center;
