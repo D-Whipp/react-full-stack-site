@@ -55,6 +55,12 @@ nav a:hover {
   color: white;
 }
 
+.no-decorations {
+  color: black;
+  list-style-type: none;
+  text-decoration: none;
+}
+
 #page-body {
   max-width: 700px;
   margin: auto;
