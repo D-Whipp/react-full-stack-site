@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import NotFoundPage from './NotFoundPage';
 import CommentsList from '../components/CommentsList';
+import AddCommentForm from '../components/AddCommentForm';
 import articles from './article-content';
 
 const ArticlePage = () => {
@@ -25,7 +26,7 @@ const ArticlePage = () => {
   const article = articles.find(
     (article) => article.name === articleId
   );
-
+ 
   const addUpvote = async () => {
     const response = await axios.put(
       `/api/articles/${articleId}/upvote`
@@ -57,6 +58,12 @@ const ArticlePage = () => {
       {article.content.map((paragraph, i) => (
         <p key={i}>{paragraph}</p>
       ))}
+      <AddCommentForm
+        articleName={articleId}
+        onArticleUpdated={(updatedArticle) =>
+          setArticleInfo(updatedArticle)
+        }
+      />
       <CommentsList comments={articleInfo.comments} />
     </>
   );
