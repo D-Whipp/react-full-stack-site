@@ -33,7 +33,7 @@ const ArticlePage = () => {
     if (isLoading) {
       loadArticleInfo();
     }
-  }, [isLoading, user]);
+  }, [isLoading, user, articleId]);
 
   const article = articles.find(
     (article) => article.name === articleId
@@ -52,9 +52,17 @@ const ArticlePage = () => {
   };
 
   const addDownvote = async () => {
+    // const response = await axios.put(
+    //   `/api/articles/${articleId}/downvote`
+    // );
+    const token = user && (await user.getIdToken());
+    const headers = token ? { authtoken: token } : {};
     const response = await axios.put(
-      `/api/articles/${articleId}/downvote`
+      `/api/articles/${articleId}/downvote`,
+      null,
+      { headers }
     );
+
     const updatedArticle = response.data;
     setArticleInfo(updatedArticle);
   };
@@ -69,14 +77,16 @@ const ArticlePage = () => {
       <div className="upvotes-section">
         {user ? (
           <button onClick={addUpvote}>
-            {canUpvote ? 'Upvote' : 'Already Upvoted'}
+            {canUpvote ? 'Upvote' : 'Already Voted'}
           </button>
         ) : (
           <button>Log in to upvote</button>
         )}
         <p>This article has {articleInfo.upvotes} upvote(s)</p>
         {user ? (
-          <button onClick={addDownvote}>Downvote</button>
+          <button onClick={addDownvote}>
+            {canUpvote ? 'Downvote' : 'Already Voted'}
+          </button>
         ) : (
           <button>Log in to downvote</button>
         )}
