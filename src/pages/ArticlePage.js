@@ -14,8 +14,12 @@ const ArticlePage = () => {
     canUpvote: false,
     canDownvote: false,
   });
-  const { canUpvote, canDownvote } = articleInfo;
+  const { canUpvote } = articleInfo;
   const { articleId } = useParams();
+  // console.log(canUpvote);
+  // console.log(canDownvote);
+  const { comments } = articleInfo;
+  console.log(comments);
 
   const { user, isLoading } = useUser();
 
@@ -52,9 +56,6 @@ const ArticlePage = () => {
   };
 
   const addDownvote = async () => {
-    // const response = await axios.put(
-    //   `/api/articles/${articleId}/downvote`
-    // );
     const token = user && (await user.getIdToken());
     const headers = token ? { authtoken: token } : {};
     const response = await axios.put(
