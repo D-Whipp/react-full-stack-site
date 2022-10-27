@@ -16,10 +16,8 @@ const ArticlePage = () => {
   });
   const { canUpvote } = articleInfo;
   const { articleId } = useParams();
-  // console.log(canUpvote);
-  // console.log(canDownvote);
   const { comments } = articleInfo;
-  console.log(comments);
+  // console.log(comments);
 
   const { user, isLoading } = useUser();
 

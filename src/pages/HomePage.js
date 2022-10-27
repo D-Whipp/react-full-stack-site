@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   const topRatedArticle = articles[0].name;
-  console.log(topRatedArticle);
 
   return (
     <>
