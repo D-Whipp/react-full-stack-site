@@ -12,9 +12,10 @@ const ArticlePage = () => {
     upvotes: 0,
     comments: [],
     canUpvote: false,
-    canDownvote: false,
+    // canDownvote: false,
   });
   const { canUpvote } = articleInfo;
+  console.log(canUpvote);
   const { articleId } = useParams();
   const { comments } = articleInfo;
   // console.log(comments);
