@@ -15,9 +15,9 @@ const ArticlePage = () => {
     // canDownvote: false,
   });
   const { canUpvote } = articleInfo;
-  console.log(canUpvote);
+  // console.log(canUpvote);
   const { articleId } = useParams();
-  const { comments } = articleInfo;
+  // const { comments } = articleInfo;
   // console.log(comments);
 
   const { user, isLoading } = useUser();
