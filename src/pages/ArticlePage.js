@@ -15,11 +15,7 @@ const ArticlePage = () => {
     // canDownvote: false,
   });
   const { canUpvote } = articleInfo;
-  // console.log(canUpvote);
   const { articleId } = useParams();
-  // const { comments } = articleInfo;
-  // console.log(comments);
-
   const { user, isLoading } = useUser();
 
   useEffect(() => {
@@ -104,7 +100,10 @@ const ArticlePage = () => {
       ) : (
         <button>Log in to add a comment</button>
       )}
-      <CommentsList comments={articleInfo.comments} />
+      <CommentsList
+        articleName={articleId}
+        comments={articleInfo.comments}
+      />
     </>
   );
 };
