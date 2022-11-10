@@ -8,7 +8,7 @@ const CommentsList = ({ comments, articleName }) => {
   // const [name, setName] = useState('');
   // const [commentText, setCommentText] = useState('');
   // referencing -> https://github.com/D-Whipp/knights-radiant-list/blob/main/assets/js/app.js
-  console.log('Article Name: ', articleName);
+  // console.log('Article Name: ', articleName);
   const deleteComment = async (e) => {
     const token = user && (await user.getIdToken());
     const headers = token ? { authToken: token } : {};
@@ -56,6 +56,7 @@ const CommentsList = ({ comments, articleName }) => {
           e.target.parentNode.remove();
           const commentNode = e.target.parentNode;
           const payload = commentNode;
+          console.log(payload);
           // const postedBy = e.target.parentNode.innerHTML;
           // if (){}
           // const titleContent =
@@ -83,14 +84,6 @@ const CommentsList = ({ comments, articleName }) => {
               alert(response.data.msg);
             }
           } catch (err) {
-            // try {
-            //   const response = await axios.delete(
-            //     `/api/articles/${articleName}/deleteComments`,
-            //     { headers }
-            //   );
-            //   if (response.data.success) {
-            //     alert(response.data.msg);
-            //   }
             console.log(err);
           }
           // return targetKey;
